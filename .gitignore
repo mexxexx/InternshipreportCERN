@@ -1,3 +1,10 @@
 *.log
 *.aux
 *.synctex.gz
+*.bbl
+*.bcf
+*.blg
+*.bak
+*.sav
+*.run.xml
+/sources
