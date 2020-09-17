@@ -65,7 +65,7 @@ Schlussendlich sind Groups unterteilt in \textit{Sections}. Ich war bei \textit{
 
 \subsection*{Zielsetzung meines Praktikums}
 
-Ich arbeitete an der der Quelle des Linac3, einer Electron Cyclontron Resonance (ECR) Quelle, die zur Erzeugung von hoch geladenen Schwerionen (hauptächlich Blei) genutzt wird. An dieser Stelle möchte ich nicht auf die Wirkungsweise eingehen, sondern auf \cite{Brown:IonSources} verweisen, da meine Tätigkeit wenig mit der Physik zu tun hatte. Das Ziel, für welches ich eingestellt wurde, war es, verschiedene Machine Learning Ansätze zu erarbeiten, mit denen der Betrieb der Quelle unterstützt werden könnte.
+Ich arbeitete an der der Quelle des Linac3, einer Electron Cyclontron Resonance (ECR) Quelle, die zur Erzeugung von hoch geladenen Schwerionen (hauptsächlich Blei) genutzt wird. An dieser Stelle möchte ich nicht auf die Wirkungsweise eingehen, sondern auf \cite{Brown:IonSources} verweisen, da meine Tätigkeit wenig mit der Physik zu tun hatte. Stark vereinfacht wird das Blei in einem Ofen verdampft und anschließend zu einem Plasma ionisiert. Dies geschieht durch das Anregen des Plasmas mittels einer externen Mikrowellenstrahlung einer bestimmten Frequenz (der Elektron-Cyclotron-Resonanzfrequenz). Das Ziel, für welches ich eingestellt wurde, war es, verschiedene Machine Learning Ansätze zu erarbeiten, mit denen der Betrieb der Quelle unterstützt werden könnte.
 
 \begin{figure}
     \centering
@@ -120,13 +120,13 @@ Schlussendlich konnten wir die Ergebnisse in einem Bericht zusammenfassen und un
 
 Nachdem wir festgestellt hatten, dass eine automatische Regulierung der Einstellungen zum damaligen Zeitpunkt nicht möglich war, kamen wir zu dem Schluss, dass ein Frühwarnsystem für die Operation sehr hilfreich wäre. In Abbildung \ref{fig:current_demo} sieht man, dass der Strahl immer wieder an Intensität verliert oder die Varianz steigt. Beides sind Effekte die vermieden werden sollten, und ein sehr frühes Erkennen solcher Instabilitäten könnten ein schnelles manuelles Eingreifen ermöglichen um diesen Entgegenzusteuern.
 
-Wenn sich Chrakteristische Merkmale einer Zeitreihe ändern, bezeichnet man dies in der Literatur als \textit{Changepoint} \cite{Aminikhanghahi:surveymethodstime}. Ich beschäftigte mich damit, verschiedene Algorithmen die für das Detektieren dieser Changepoints existieren auf die Linac3 Quelle anzuwenden.
+Wenn sich chrakteristische Merkmale einer Zeitreihe ändern, bezeichnet man dies in der Literatur als \textit{Changepoint} \cite{Aminikhanghahi:surveymethodstime}. Ich beschäftigte mich damit, verschiedene Algorithmen die für das Detektieren dieser Changepoints existieren auf die Linac3 Quelle anzuwenden.
 
 Mein Fokus lag dabei auf dem Erkennen von Veränderungen von Strahlcharakteristiken, insbesondere im Erkennen von plötzlichen Intensitätsveränderungen und dem Auftreten starker Schwankungen. Ziel hierfür war es, eine Methode zu finden, die auch im laufenden Betrieb funktionierte, d.h. es gab die Anforderung online zu arbeiten. Dafür erwies sich ein bayes'scher Ansatz als hilfreich, beschrieben in \cite{Adams:BayesianOnlineChangepoint}. Dieser Algorithmus schätzt sogenannte \textit{Runlength Wahrscheinlichekeiten}, die Wahrscheinlichkeit, dass ein Changepoint $x$ Zeiteinheiten vom aktuellen Moment zurückliegt.
 
 Neben der Implementierung beschäftigte ich mich damit, effektive Hyperparameter für den Algorithmus zu finden und nach Möglichkeiten zu suchen, die Ergebnisse zu optimieren und stabiler zu machen. Dafür recherchierte ich auf dem ursprünglichen Artikel basierende Konzepte und experimentierte mit eigenen Optimierungen des Algorithmus. 
 
-Auf Grund von Zeitmangel konnte diese Projekt leider nicht zur Anwendungreife fertiggestellt werden, aber ich bin optimistisch, dass dieses Gerüst in Zukunft weiterentwickelt werden kann, um die Operation als Frühwarnsystem zu unterstützen. In Abbildung \ref{fig:bocd} sieht man eine beispielhafte Anwendung, die schwarzen Balken zeigen einen vom Algorithmus gefundenen Changepoint. Außerdem präsentierte ich den Ansatz in einem informellen Machine Learning Forum, wo er Anklang fand und dadruch hoffentlich auch von anderen Teams einbezogen wird.
+Auf Grund von Zeitmangel konnte diese Projekt leider nicht zur Anwendungreife fertiggestellt werden, aber ich bin optimistisch, dass dieses Gerüst in Zukunft weiterentwickelt werden kann, um die Operation als Frühwarnsystem zu unterstützen. In Abbildung \ref{fig:bocd} sieht man eine beispielhafte Anwendung, die schwarzen Balken zeigen einen vom Algorithmus gefundenen Changepoint. Außerdem präsentierte ich den Ansatz in einem informellen Machine Learning Forum, wo er Anklang fand und dadurch hoffentlich auch von anderen Teams einbezogen wird.
 
 \begin{figure}
     \centering
